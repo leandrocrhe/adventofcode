@@ -1,0 +1,15 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "Ejercisios para Navegabit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Leandro Cruz Hechavarria",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^11.1.1"
+  }
+}
