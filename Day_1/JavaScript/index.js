@@ -16,7 +16,7 @@ fs.readFile('file_input.txt', 'utf-8', (err, data) => {
   });
 
 
-
+// --- Primera parte ---
 function calcularCaloriasMaximas(calorias) {
   let caloriasElfos = [];
   let caloriasElfoActual = 0;
@@ -37,7 +37,7 @@ function calcularCaloriasMaximas(calorias) {
   return maxCalorias;
 };
 
-
+// --- Segunda parte ---
 function calcularTresElfosPrincipales(calorias) {
   let caloriasElfos = [];
   let caloriasElfoActual = 0;
