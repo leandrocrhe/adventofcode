@@ -9,7 +9,7 @@ fs.readFile('file_input.txt', 'utf-8', (err, data) => {
     const calorias = data.split('\n');
 
     const caloriasMaximas = calcularCaloriasMaximas(calorias);
-    const TresElfosPrincipales = calcularTresElfosPrincipales(calorias)
+    const TresElfosPrincipales = calcularTresElfosPrincipales(calorias);
 
     console.log("El Elfo que lleva la mayor cantidad de calorías lleva un total de:", caloriasMaximas);
     console.log('Total de calorías de los tres Elfos principales:', TresElfosPrincipales);
@@ -31,7 +31,6 @@ function calcularCaloriasMaximas(calorias) {
     }
   }
 
-  // Agregar las calorías del último Elfo
   caloriasElfos.push(caloriasElfoActual);
 
   const maxCalorias = Math.max(...caloriasElfos);
