@@ -9,7 +9,10 @@ fs.readFile('file_input.txt', 'utf-8', (err, data) => {
     const rucksacks = data.split('\n');
     
     const result = countContainedPairs(rucksacks);
+    const result2 = countOverlappingPairs(rucksacks);
+
     console.log(result);
+    console.log(result2);
 });
 
 
@@ -35,3 +38,17 @@ function countContainedPairs(assignmentPairs) {
 
 
 // -- Segunda parte --
+function countOverlappingPairs(assignmentPairs) {
+  let count = 0;
+  for (const pair of assignmentPairs) {
+    const [range1, range2] = pair.split(",");
+    const parsedRange1 = range1.split("-").map(Number);
+    const parsedRange2 = range2.split("-").map(Number);
+    const overlapStart = Math.max(parsedRange1[0], parsedRange2[0]);
+    const overlapEnd = Math.min(parsedRange1[1], parsedRange2[1]);
+    if (overlapStart <= overlapEnd) {
+      count++;
+    }
+  }
+  return count;
+}
