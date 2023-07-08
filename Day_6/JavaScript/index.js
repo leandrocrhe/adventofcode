@@ -22,7 +22,7 @@ function findStartOfPacketMarker(datastream) {
     }
   }
   return -1; // Devolver -1 si no se encuentra ningún marcador
-}
+};
 
 
 // --- Segunda parte ---
@@ -33,4 +33,4 @@ function findStartOfMessageMarker(datastream) {
     }
   }
   return -1;
-}
+};
