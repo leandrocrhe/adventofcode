@@ -6,8 +6,11 @@ fs.readFile('file_input.txt', 'utf-8', (err, data) => {
       return;
     }
     
-    const resultado = findStartOfPacketMarker(data);
-    console.log(resultado);
+    const result = findStartOfPacketMarker(data);
+    const result2 = findStartOfMessageMarker(data);
+
+    console.log(result);
+    console.log(result2);
 });
 
 
@@ -19,4 +22,15 @@ function findStartOfPacketMarker(datastream) {
     }
   }
   return -1; // Devolver -1 si no se encuentra ningún marcador
+}
+
+
+// --- Segunda parte ---
+function findStartOfMessageMarker(datastream) {
+  for (let i = 13; i < datastream.length; i++) {
+    if (new Set(datastream.substring(i - 13, i + 1)).size === 14) {
+      return i + 1;
+    }
+  }
+  return -1;
 }
